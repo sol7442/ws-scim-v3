@@ -1,0 +1,3 @@
+
+rootProject.name = 'ws-scim-v3'
+include "ws-scim-repository"
