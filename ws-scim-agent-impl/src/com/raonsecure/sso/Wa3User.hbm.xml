@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2019. 8. 26 ¿ÀÈÄ 8:55:47 by Hibernate Tools 5.4.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="com.raonsecure.sso.Wa3User" optimistic-lock="version" polymorphism="implicit" schema="SSODBUSER" select-before-update="false" table="WA3_USER">
+        <composite-id class="com.raonsecure.sso.Wa3UserId" mapped="false" name="id" unsaved-value="undefined">
+            <key-property name="id" type="string">
+                <column length="64" name="ID"/>
+            </key-property>
+            <key-property name="name" type="string">
+                <column length="64" name="NAME"/>
+            </key-property>
+            <key-property name="rrn" type="string">
+                <column length="64" name="RRN"/>
+            </key-property>
+            <key-property name="email" type="string">
+                <column length="256" name="EMAIL"/>
+            </key-property>
+            <key-property name="creator" type="string">
+                <column length="64" name="CREATOR"/>
+            </key-property>
+            <key-property name="modifier" type="string">
+                <column length="64" name="MODIFIER"/>
+            </key-property>
+            <key-property name="info" type="string">
+                <column length="512" name="INFO"/>
+            </key-property>
+            <key-property name="divId" type="string">
+                <column length="64" name="DIV_ID"/>
+            </key-property>
+            <key-property name="orgId" type="string">
+                <column length="64" name="ORG_ID"/>
+            </key-property>
+            <key-property name="pathId" type="string">
+                <column length="512" name="PATH_ID"/>
+            </key-property>
+            <key-property name="pwd1" type="string">
+                <column length="256" name="PWD1"/>
+            </key-property>
+            <key-property name="pwd2" type="string">
+                <column length="256" name="PWD2"/>
+            </key-property>
+            <key-property name="pwdMustChange" type="long">
+                <column name="PWD_MUST_CHANGE" precision="10" scale="0"/>
+            </key-property>
+            <key-property name="pwdChangeTime" type="big_integer">
+                <column name="PWD_CHANGE_TIME" precision="38" scale="0"/>
+            </key-property>
+            <key-property name="pwdRetryCount" type="long">
+                <column name="PWD_RETRY_COUNT" precision="10" scale="0"/>
+            </key-property>
+            <key-property name="pwdRetryTime" type="big_integer">
+                <column name="PWD_RETRY_TIME" precision="38" scale="0"/>
+            </key-property>
+            <key-property name="accountProfile" type="clob">
+                <column name="ACCOUNT_PROFILE"/>
+            </key-property>
+            <key-property name="accessAllow" type="long">
+                <column name="ACCESS_ALLOW" precision="10" scale="0"/>
+            </key-property>
+            <key-property name="disabled" type="long">
+                <column name="DISABLED" precision="10" scale="0"/>
+            </key-property>
+            <key-property name="disabledReason" type="string">
+                <column length="512" name="DISABLED_REASON"/>
+            </key-property>
+            <key-property name="locked" type="long">
+                <column name="LOCKED" precision="10" scale="0"/>
+            </key-property>
+            <key-property name="loginPolicyId" type="big_integer">
+                <column name="LOGIN_POLICY_ID" precision="38" scale="0"/>
+            </key-property>
+            <key-property name="validFrom" type="big_integer">
+                <column name="VALID_FROM" precision="38" scale="0"/>
+            </key-property>
+            <key-property name="validTo" type="big_integer">
+                <column name="VALID_TO" precision="38" scale="0"/>
+            </key-property>
+            <key-property name="lastLogonTime" type="big_integer">
+                <column name="LAST_LOGON_TIME" precision="38" scale="0"/>
+            </key-property>
+            <key-property name="lastLogonIp" type="string">
+                <column length="20" name="LAST_LOGON_IP"/>
+            </key-property>
+            <key-property name="orgDelayInfo" type="string">
+                <column length="64" name="ORG_DELAY_INFO"/>
+            </key-property>
+            <key-property name="createTime" type="big_integer">
+                <column name="CREATE_TIME" precision="38" scale="0"/>
+            </key-property>
+            <key-property name="modifyTime" type="big_integer">
+                <column name="MODIFY_TIME" precision="38" scale="0"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

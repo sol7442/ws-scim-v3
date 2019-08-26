@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2019. 8. 26 ¿ÀÈÄ 8:55:47 by Hibernate Tools 5.4.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="com.raonsecure.sso.Wa3OrgUser" optimistic-lock="version" polymorphism="implicit" schema="SSODBUSER" select-before-update="false" table="WA3_ORG_USER">
+        <composite-id class="com.raonsecure.sso.Wa3OrgUserId" mapped="false" name="id" unsaved-value="undefined">
+            <key-property name="userId" type="string">
+                <column length="64" name="USER_ID"/>
+            </key-property>
+            <key-property name="orgId" type="string">
+                <column length="64" name="ORG_ID"/>
+            </key-property>
+        </composite-id>
+        <property generated="never" lazy="false" name="validFrom" optimistic-lock="true" type="long" unique="false">
+            <column name="VALID_FROM" not-null="true" precision="13" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="validTo" optimistic-lock="true" type="long" unique="false">
+            <column name="VALID_TO" not-null="true" precision="13" scale="0"/>
+        </property>
+    </class>
+</hibernate-mapping>

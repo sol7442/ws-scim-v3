@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2019. 8. 26 ¿ÀÈÄ 8:55:47 by Hibernate Tools 5.4.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="com.raonsecure.sso.Wa3Org" optimistic-lock="version" polymorphism="implicit" schema="SSODBUSER" select-before-update="false" table="WA3_ORG">
+        <id name="id" type="string">
+            <column length="64" name="ID"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="name" optimistic-lock="true" type="string" unique="false">
+            <column length="64" name="NAME" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="creator" optimistic-lock="true" type="string" unique="false">
+            <column length="64" name="CREATOR"/>
+        </property>
+        <property generated="never" lazy="false" name="modifier" optimistic-lock="true" type="string" unique="false">
+            <column length="64" name="MODIFIER"/>
+        </property>
+        <property generated="never" lazy="false" name="info" optimistic-lock="true" type="string" unique="false">
+            <column length="1024" name="INFO"/>
+        </property>
+        <property generated="never" lazy="false" name="parentId" optimistic-lock="true" type="string" unique="false">
+            <column length="64" name="PARENT_ID" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="pathId" optimistic-lock="true" type="string" unique="false">
+            <column length="512" name="PATH_ID" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="loginPolicyId" optimistic-lock="true" type="java.lang.Long" unique="false">
+            <column name="LOGIN_POLICY_ID" precision="13" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="createTime" optimistic-lock="true" type="java.lang.Long" unique="false">
+            <column name="CREATE_TIME" precision="13" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="modifyTime" optimistic-lock="true" type="java.lang.Long" unique="false">
+            <column name="MODIFY_TIME" precision="13" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="orderNum" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="ORDER_NUM" precision="8" scale="0"/>
+        </property>
+    </class>
+</hibernate-mapping>
