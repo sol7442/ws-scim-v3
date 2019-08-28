@@ -1,20 +1,20 @@
 package com.wowsanta.scim.model;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "SCIM_USER")
 public class ScimUser  {
 
 	@Id
+	@Column(name="id", columnDefinition = "VARCHAR(64)")
 	private String id;
 	
-	@Column(name="name")
+	@Column(name="name", columnDefinition = "VARCHAR(64)")
 	private String name;
 	
 	@Column(name="active")
@@ -26,6 +26,28 @@ public class ScimUser  {
 	@Column(name="createTime")
 	private Date createTime;
 	
+
+	@ManyToMany(fetch=FetchType.EAGER, cascade = { CascadeType.ALL })
+	@JoinTable(
+			name = "SCIM_USER_GROUP", 
+			joinColumns = { @JoinColumn(name = "user_id", foreignKey=@ForeignKey(name="FK_USER_GROUP")) }, 
+			inverseJoinColumns = { @JoinColumn(name = "group_id", foreignKey=@ForeignKey(name="FK_GROUP_USER")) }
+	)
+	private Set<ScimGroup> groups = new HashSet<ScimGroup>();
+	
+	
+	
+	
+	public void addGroup(ScimGroup group) {
+		this.groups.add(group);
+	}
+	public Set<ScimGroup> getGroups() {
+		return groups;
+	}
+
+	public void setGroups(Set<ScimGroup> groups) {
+		this.groups = groups;
+	}
 
 	public ScimUser() {
 	}
