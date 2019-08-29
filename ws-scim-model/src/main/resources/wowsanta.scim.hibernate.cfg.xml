@@ -8,7 +8,7 @@
     <property name="hibernate.connection.password">wession@12</property>
     <property name="hibernate.connection.url">jdbc:mysql://wession.com:3306/ws_scim_v3?useUnicode=true&amp;serverTimezone=UTC</property>
     <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
       
     <property name="show_sql">true</property>
   	<property name="format_sql">true</property>  
@@ -16,5 +16,11 @@
   	
   	<mapping class="com.wowsanta.scim.model.ScimUser"/>
   	<mapping class="com.wowsanta.scim.model.ScimGroup"/>
+  	<mapping class="com.wowsanta.scim.model.ScimOrg"/>
+  	<mapping class="com.wowsanta.scim.model.ScimPos"/>
+  	<mapping class="com.wowsanta.scim.model.ScimJob"/>
+  	<mapping class="com.wowsanta.scim.model.ScimAttribute"/>
+  	
+  	
  </session-factory>
 </hibernate-configuration>

@@ -29,24 +29,21 @@ public class ScimUser  {
 
 	@ManyToMany(fetch=FetchType.EAGER, cascade = { CascadeType.ALL })
 	@JoinTable(
-			name = "SCIM_USER_GROUP", 
-			joinColumns = { @JoinColumn(name = "user_id", foreignKey=@ForeignKey(name="FK_USER_GROUP")) }, 
-			inverseJoinColumns = { @JoinColumn(name = "group_id", foreignKey=@ForeignKey(name="FK_GROUP_USER")) }
+			name = "SCIM_USER_ATTRIBUTE", 
+			joinColumns = { @JoinColumn(name = "user_id", foreignKey=@ForeignKey(name="FK_USER_ATTRIBUTE")) }, 
+			inverseJoinColumns = { @JoinColumn(name = "attr_id") }
 	)
-	private Set<ScimGroup> groups = new HashSet<ScimGroup>();
+	private Set<ScimAttribute> attribues = new HashSet<ScimAttribute>();
 	
-	
-	
-	
-	public void addGroup(ScimGroup group) {
-		this.groups.add(group);
+	public void addAttribute(ScimAttribute attr) {
+		this.attribues.add(attr);
 	}
-	public Set<ScimGroup> getGroups() {
-		return groups;
+	public Set<ScimAttribute> getAttributes() {
+		return attribues;
 	}
 
-	public void setGroups(Set<ScimGroup> groups) {
-		this.groups = groups;
+	public void setAttributes(Set<ScimAttribute> attrs) {
+		this.attribues = attrs;
 	}
 
 	public ScimUser() {
