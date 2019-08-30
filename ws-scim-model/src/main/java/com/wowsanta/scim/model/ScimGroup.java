@@ -4,13 +4,13 @@ package com.wowsanta.scim.model;
 import javax.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "SCIM_GROUP")
+@Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "type")
 public abstract class ScimGroup {
 
 	@Id
-	@Column(name = "id", columnDefinition = "VARCHAR(64)")
+	@Column(name = "id", columnDefinition = "VARCHAR(64)")	
 	private String id;
 
 	@Column(name = "name")

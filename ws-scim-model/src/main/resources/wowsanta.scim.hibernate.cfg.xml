@@ -20,6 +20,12 @@
   	<mapping class="com.wowsanta.scim.model.ScimPos"/>
   	<mapping class="com.wowsanta.scim.model.ScimJob"/>
   	<mapping class="com.wowsanta.scim.model.ScimAttribute"/>
+  	<mapping class="com.wowsanta.scim.model.ScimPolicy"/>
+  	<mapping class="com.wowsanta.scim.model.ScimTarget"/>
+  	<mapping class="com.wowsanta.scim.model.ScimProvider"/>
+  	<mapping class="com.wowsanta.scim.model.ScimConsumer"/>
+  	<mapping class="com.wowsanta.scim.model.ScimSource"/>
+  	<mapping class="com.wowsanta.scim.model.ScimResource"/>
   	
   	
  </session-factory>

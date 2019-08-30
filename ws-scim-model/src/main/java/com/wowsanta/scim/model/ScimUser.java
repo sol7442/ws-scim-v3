@@ -30,8 +30,8 @@ public class ScimUser  {
 	@ManyToMany(fetch=FetchType.EAGER, cascade = { CascadeType.ALL })
 	@JoinTable(
 			name = "SCIM_USER_ATTRIBUTE", 
-			joinColumns = { @JoinColumn(name = "user_id", foreignKey=@ForeignKey(name="FK_USER_ATTRIBUTE")) }, 
-			inverseJoinColumns = { @JoinColumn(name = "attr_id") }
+			joinColumns = { @JoinColumn(name = "user_id", referencedColumnName = "id", foreignKey=@ForeignKey(name="FK_USER_ATTRIBUTE")) }, 
+			inverseJoinColumns = { @JoinColumn(name = "attr_id", referencedColumnName = "id", foreignKey=@ForeignKey(name="FK_ATTRIBUTE_USER")) }
 	)
 	private Set<ScimAttribute> attribues = new HashSet<ScimAttribute>();
 	

@@ -35,25 +35,20 @@ public class ScimAttribute {
 		this.id = buffer.toString();
 	}
 	@Id
+	@Column(name="id", columnDefinition = "VARCHAR(256)")
 	private String id;
 	
-	@ManyToOne(fetch=FetchType.EAGER, cascade= {CascadeType.ALL})	
+	@ManyToOne(fetch=FetchType.EAGER, cascade= {CascadeType.ALL})
+	@JoinColumn(name = "org_id", referencedColumnName = "id", foreignKey=@ForeignKey(name="FK_ORG"))
 	private ScimOrg org;
 	
-	@ManyToOne(fetch=FetchType.EAGER, cascade= {CascadeType.ALL})			
+	@ManyToOne(fetch=FetchType.EAGER, cascade= {CascadeType.ALL})
+	@JoinColumn(name = "pos_id", referencedColumnName = "id", foreignKey=@ForeignKey(name="FK_POS"))
 	private ScimPos pos;
 	
 	@ManyToOne(fetch=FetchType.EAGER, cascade= {CascadeType.ALL})		
+	@JoinColumn(name = "job_id", referencedColumnName = "id", foreignKey=@ForeignKey(name="FK_JOB"))
 	private ScimJob job;
-		
-//	@Expose
-//	@ManyToMany(fetch=FetchType.LAZY, cascade = { CascadeType.ALL })
-//	@JoinTable(
-//			name = "SCIM_USER_ATTRIBUTE", 
-//			joinColumns = { @JoinColumn(name = "attr_id", foreignKey=@ForeignKey(name="FK_ATTRIBUTE_USER")) }, 
-//			inverseJoinColumns = { @JoinColumn(name = "user_id") }
-//	)
-//	private transient Set<ScimUser> users = new HashSet<ScimUser>();
 	
 //------------------------------//	
 	public ScimOrg getOrg() {

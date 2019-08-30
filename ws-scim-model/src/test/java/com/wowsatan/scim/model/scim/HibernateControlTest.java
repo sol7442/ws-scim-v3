@@ -2,13 +2,10 @@ package com.wowsatan.scim.model.scim;
 
 import java.util.Date;
 
-import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.service.ServiceRegistry;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,7 +14,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.wowsanta.scim.HibernateProxyTypeAdapter;
 import com.wowsanta.scim.model.ScimAttribute;
-import com.wowsanta.scim.model.ScimGroup;
 import com.wowsanta.scim.model.ScimJob;
 import com.wowsanta.scim.model.ScimOrg;
 import com.wowsanta.scim.model.ScimPos;
@@ -73,7 +69,7 @@ public class HibernateControlTest {
 	}
 	//@Test
 	public void test_create_user_attribute() {
-		try {
+		try { 
 			Session session = sessionFactory.openSession();
 			Transaction tr = session.beginTransaction();
 

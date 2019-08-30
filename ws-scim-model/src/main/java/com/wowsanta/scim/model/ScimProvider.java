@@ -5,8 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "SCIM_POS")
-@DiscriminatorValue("pos")
-public class ScimPos extends ScimGroup{
+@Table(name = "SCIM_PROVIDER")
+@DiscriminatorValue("pro")
+public class ScimProvider extends ScimTarget{
 
 }
