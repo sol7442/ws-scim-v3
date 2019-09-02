@@ -5,6 +5,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "SCIM_CONSUMER")
 @DiscriminatorValue("con")
-public class ScimConsumer extends ScimTarget {
+public class ScimConsumer extends ScimSystem {
 
 }

@@ -35,7 +35,7 @@ public class ScimAttribute {
 		this.id = buffer.toString();
 	}
 	@Id
-	@Column(name="id", columnDefinition = "VARCHAR(256)")
+	@Column(name="id", columnDefinition = "VARCHAR(64)")
 	private String id;
 	
 	@ManyToOne(fetch=FetchType.EAGER, cascade= {CascadeType.ALL})

@@ -7,6 +7,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "SCIM_PROVIDER")
 @DiscriminatorValue("pro")
-public class ScimProvider extends ScimTarget{
+public class ScimProvider extends ScimSystem{
 
 }

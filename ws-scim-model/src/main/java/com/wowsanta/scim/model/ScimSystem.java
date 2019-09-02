@@ -9,10 +9,10 @@ import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "SCIM_TARGET")
+@Table(name = "SCIM_SYSTEM")
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "type")
-public abstract class ScimTarget {
+public abstract class ScimSystem {
 	@Id
 	@Column(name = "id", columnDefinition = "VARCHAR(64)")	
 	private String id;

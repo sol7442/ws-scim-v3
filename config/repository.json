@@ -1,0 +1,4 @@
+{
+  "tyep": "HIBERNATE",
+  "configPath": "../config/wowsanta.scim.hibernate.cfg.xml"
+}

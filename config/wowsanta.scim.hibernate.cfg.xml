@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC 
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd"> 
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.password">wession@12</property>
+    <property name="hibernate.connection.url">jdbc:mysql://wession.com:3306/ws_scim_v3?useUnicode=true&amp;serverTimezone=UTC</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+      
+    <property name="show_sql">true</property>
+  	<property name="format_sql">true</property>  
+  	<property name="hbm2ddl.auto">update</property>
+  	
+  	<mapping class="com.wowsanta.scim.model.ScimUser"/>
+  	<mapping class="com.wowsanta.scim.model.ScimGroup"/>
+  	<mapping class="com.wowsanta.scim.model.ScimOrg"/>
+  	<mapping class="com.wowsanta.scim.model.ScimPos"/>
+  	<mapping class="com.wowsanta.scim.model.ScimJob"/>
+  	<mapping class="com.wowsanta.scim.model.ScimAttribute"/>
+  	<mapping class="com.wowsanta.scim.model.ScimPolicy"/>
+  	<mapping class="com.wowsanta.scim.model.ScimSystem"/>
+  	<mapping class="com.wowsanta.scim.model.ScimProvider"/>
+  	<mapping class="com.wowsanta.scim.model.ScimConsumer"/>
+  	<mapping class="com.wowsanta.scim.model.ScimResource"/>
+  	<mapping class="com.wowsanta.scim.model.ScimSystemResource"/>
+  	
+  	
+ </session-factory>
+</hibernate-configuration>

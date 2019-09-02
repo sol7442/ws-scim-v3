@@ -1,4 +1,4 @@
 version    	= '1.0.1'	
 dependencies {
-    compile project(':ws-scim-repository')
+    compile project(':ws-scim-model')
 }

@@ -30,7 +30,7 @@ public class ScimPolicy {
 			joinColumns = { @JoinColumn(name = "policy_id", referencedColumnName = "id", foreignKey=@ForeignKey(name="FK_POLICY_ATTRIBUTE")) }, 
 			inverseJoinColumns = { @JoinColumn(name = "resource_id", referencedColumnName = "id", foreignKey=@ForeignKey(name="FK_RESOURCE_POLICY")) }
 	)
-	private Set<ScimResource> resources = new HashSet<ScimResource>();
+	private Set<ScimSystemResource> resources = new HashSet<ScimSystemResource>();
 	
 	public String getId() {
 		return id;
