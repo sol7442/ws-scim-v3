@@ -1,7 +1,7 @@
 
 package com.wowsanta.scim.repository;
 
-public interface ScimSessionFactory {
+public interface ScimRepositoryFactory {
 	public ScimSession openSession();
 	public void close();
 }

@@ -9,9 +9,9 @@ import org.hibernate.boot.cfgxml.spi.MappingReference;
 import org.hibernate.cfg.Configuration;
 
 import com.wowsanta.scim.repository.ScimSession;
-import com.wowsanta.scim.repository.ScimSessionFactory;
+import com.wowsanta.scim.repository.ScimRepositoryFactory;
 
-public class HibernateSessonFactory implements ScimSessionFactory {
+public class HibernateSessonFactory implements ScimRepositoryFactory {
 
 	private SessionFactory sessionFactory = null;
 

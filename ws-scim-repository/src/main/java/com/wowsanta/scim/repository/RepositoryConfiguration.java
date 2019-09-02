@@ -63,8 +63,8 @@ public class RepositoryConfiguration {
 		this.tyep = tyep;
 	}
 	
-	public ScimSessionFactory build() {
-		ScimSessionFactory sessionFactory = null;
+	public ScimRepositoryFactory build() {
+		ScimRepositoryFactory sessionFactory = null;
 		switch (this.tyep) {
 		case JDBC:
 			break;

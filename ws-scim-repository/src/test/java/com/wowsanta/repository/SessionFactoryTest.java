@@ -14,7 +14,7 @@ import com.wowsanta.scim.model.ScimUser;
 import com.wowsanta.scim.repository.RepositoryConfiguration;
 import com.wowsanta.scim.repository.RepositoryConfiguration.REPOSITORY;
 import com.wowsanta.scim.repository.ScimSession;
-import com.wowsanta.scim.repository.ScimSessionFactory;
+import com.wowsanta.scim.repository.ScimRepositoryFactory;
 import com.wowsanta.scim.repository.ScimTransaction;
 
 
@@ -28,10 +28,10 @@ public class SessionFactoryTest {
 		//config.setTyep(REPOSITORY.HIBERNATE);
 		//config.save("../config/repository.json");
 		
-		ScimSessionFactory sessionFactory = config.build();
+		ScimRepositoryFactory repositoryFactory = config.build();
 		
 		
-		ScimSession session = sessionFactory.openSession();
+		ScimSession session = repositoryFactory.openSession();
 		ScimTransaction tr = session.beginTransaction();
 		
 		ScimOrg org = new ScimOrg();
@@ -66,7 +66,7 @@ public class SessionFactoryTest {
 
 		tr.commit();
 		session.close();
-		sessionFactory.close();
+		repositoryFactory.close();
 		
 	}
 }
