@@ -29,7 +29,7 @@ subprojects {
 	            it.mkdirs()
 	        }
 	    }
-	 
+	  
 	    sourceSets*.resources.srcDirs*.each {
 	        if( !it.exists() ) {
 	            it.mkdirs()
@@ -37,7 +37,7 @@ subprojects {
 	    }
 	}
 	dependencies {
-	    
+	    testImplementation 'junit:junit:4.12'
 	}
 }
 
