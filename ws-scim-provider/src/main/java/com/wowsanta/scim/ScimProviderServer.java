@@ -1,16 +1,20 @@
 package com.wowsanta.scim;
 
+import java.io.FileNotFoundException;
 import java.util.function.Consumer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.wowsanta.scim.service.ServiceConfiguartion;
+import com.wowsanta.scim.service.SparkService;
 
 import spark.Spark;
 
 public class ScimProviderServer {
 
 	static Logger logger = LoggerFactory.getLogger(ScimProviderServer.class);
-	
+	private SparkService service;
 	public static void main(String[] args) {
 		ScimProviderServer server = new ScimProviderServer();
 		server.initialize();
@@ -18,27 +22,25 @@ public class ScimProviderServer {
 	}
 
 	private void start() {
-		Spark.awaitInitialization();
+		try {
+			service = ServiceConfiguartion.load("../config/service.json").build();
+			service.start();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
 	}
 	private void stop() {
-		Spark.awaitStop();
+		if(service != null) {
+			service.stop();
+		}
 	}
 	
 	private boolean initialize() {
-		Spark.initExceptionHandler(new InitExceptionHandler());
-		Spark.port(5000);
-		Spark.threadPool(10,10,100);
-		//Spark.secure
-		//Spark.staticFiles.externalLocation
-		//
+		
 		
 		return true;
 	}
 	
-	private class InitExceptionHandler implements Consumer<Exception> {
-		@Override
-		public void accept(Exception t) {
-			// TODO Auto-generated method stub
-		}
-	}
+	
 }

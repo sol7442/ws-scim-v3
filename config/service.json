@@ -1,0 +1,15 @@
+{
+  "port": 5000,
+  "maxThreads": 10,
+  "minThreads": 5,
+  "idleTimeoutMillis": 1000,
+  "after": [],
+  "before": [
+    {
+      "path": "/*",
+      "className": "com.wowsanta.scim.service.before.AccessFilter"
+    }
+  ],
+  "group": [],
+  "routs": []
+}

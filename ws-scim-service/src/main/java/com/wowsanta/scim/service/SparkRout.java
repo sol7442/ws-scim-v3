@@ -1,7 +1,10 @@
 package com.wowsanta.scim.service;
 
+import spark.route.HttpMethod;
+
 public class SparkRout {
 	private String path;
+	private HttpMethod method; 
 	private String className;
 	private String transClass;
 	
@@ -23,5 +26,11 @@ public class SparkRout {
 	}
 	public void setTransClass(String transClass) {
 		this.transClass = transClass;
+	}
+	public HttpMethod getMethod() {
+		return method;
+	}
+	public void setMethod(HttpMethod method) {
+		this.method = method;
 	}
 }
