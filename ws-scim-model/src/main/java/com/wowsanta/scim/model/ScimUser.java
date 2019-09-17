@@ -4,12 +4,23 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ForeignKey;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+import com.wowsatan.scim.PresentObject;
+import com.wowsatan.scim.PrimitiveObject;
 
 @Entity
 @Table(name = "SCIM_USER")
-public class ScimUser  {
-
+public class ScimUser implements PresentObject {
 	@Id
 	@Column(name="id", columnDefinition = "VARCHAR(64)")
 	private String id;
@@ -48,6 +59,13 @@ public class ScimUser  {
 
 	public ScimUser() {
 	}
+	public ScimUser(String id) {
+		this.id = id;
+	}
+	public ScimUser(String id, String name) {
+		this.id = id;
+		this.name = name;
+	}
 	
 	public Date getModifyTime() {
 		return modifyTime;
@@ -65,14 +83,6 @@ public class ScimUser  {
 		this.createTime = createTime;
 	}
 	
-	public ScimUser(String id) {
-		this.id = id;
-	}
-
-	public ScimUser(String id, String name) {
-		this.id = id;
-		this.name = name;
-	}
 
 	public String getId() {
 		return this.id;
@@ -97,5 +107,14 @@ public class ScimUser  {
 	public void setActive(Boolean active) {
 		this.active = active;
 	}
-
+	@Override
+	public void convert(PrimitiveObject obj) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public PrimitiveObject convert() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

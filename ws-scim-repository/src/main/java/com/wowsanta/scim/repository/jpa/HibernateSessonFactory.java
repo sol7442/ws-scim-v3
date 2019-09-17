@@ -1,20 +1,16 @@
 package com.wowsanta.scim.repository.jpa;
 
 import java.io.File;
-import java.util.List;
 
-import org.hibernate.MappingException;
 import org.hibernate.SessionFactory;
-import org.hibernate.boot.cfgxml.spi.MappingReference;
 import org.hibernate.cfg.Configuration;
 
-import com.wowsanta.scim.repository.ScimSession;
-import com.wowsanta.scim.repository.ScimRepositoryFactory;
+import com.wowsanta.scim.repository.RepositorySession;
+import com.wowsanta.scim.repository.RepositorySessionFactory;
 
-public class HibernateSessonFactory implements ScimRepositoryFactory {
+public class HibernateSessonFactory extends RepositorySessionFactory {
 
 	private SessionFactory sessionFactory = null;
-
 	
 	public HibernateSessonFactory(String config_file) {
 		
@@ -26,7 +22,7 @@ public class HibernateSessonFactory implements ScimRepositoryFactory {
 
 
 	@Override
-	public ScimSession openSession() {
+	public RepositorySession openSession() {
 		return new HibernateSession(this.sessionFactory.openSession());
 	}
 

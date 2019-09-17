@@ -1,0 +1,14 @@
+{
+  "userPrimitiveClass": "com.wowsanta.scim.model.PrimitiveUser",
+  "userPresentClass": "com.wowsanta.scim.model.ScimUser",
+  "groupPrimitiveClass": {
+    "org": "com.wowsanta.scim.model.PrimitiveOrg",
+    "pos": "com.wowsanta.scim.model.PrimitivePos",
+    "job": "com.wowsanta.scim.model.PrimitiveJob"
+  },
+  "groupPresentClass": {
+    "org": "com.wowsanta.scim.model.ScimOrg",
+    "pos": "com.wowsanta.scim.model.ScimPos",
+    "job": "com.wowsanta.scim.model.ScimJob"
+  }
+}

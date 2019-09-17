@@ -63,19 +63,18 @@ public class RepositoryConfiguration {
 		this.tyep = tyep;
 	}
 	
-	public ScimRepositoryFactory build() {
-		ScimRepositoryFactory sessionFactory = null;
+	public RepositorySessionFactory build() {
 		switch (this.tyep) {
 		case JDBC:
 			break;
 		case HIBERNATE:
-			sessionFactory = new HibernateSessonFactory(this.configPath);
+			RepositorySessionFactory.setInstance(new HibernateSessonFactory(this.configPath));
 			break;
 		default:
 			break;
 		}
 		
-		return sessionFactory;
+		return RepositorySessionFactory.getInstance();
 	}
 	
 	public String getConfigPath() {

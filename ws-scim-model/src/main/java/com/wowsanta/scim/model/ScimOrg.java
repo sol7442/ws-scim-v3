@@ -3,6 +3,9 @@ package com.wowsanta.scim.model;
 
 import javax.persistence.*;
 
+import com.wowsatan.scim.PrimitiveObject;
+
+
 
 @Entity
 @Table(name = "SCIM_ORG")
@@ -21,5 +24,17 @@ public class ScimOrg extends ScimGroup {
 
 	public void setParent(ScimOrg parent) {
 		this.parent = parent;
+	}
+
+	@Override
+	public void convert(PrimitiveObject obj) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public PrimitiveObject convert() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

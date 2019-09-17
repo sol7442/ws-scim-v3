@@ -2,16 +2,16 @@ package com.wowsanta.scim.repository.jpa;
 
 import org.hibernate.Session;
 
-import com.wowsanta.scim.repository.ScimSession;
-import com.wowsanta.scim.repository.ScimTransaction;
+import com.wowsanta.scim.repository.RepositorySession;
+import com.wowsanta.scim.repository.RepositoryTransaction;
 
-public class HibernateSession implements ScimSession {
+public class HibernateSession implements RepositorySession {
 	final Session session;
 	public HibernateSession(Session session) {
 		this.session = session;
 	}
 	@Override
-	public ScimTransaction beginTransaction() {
+	public RepositoryTransaction beginTransaction() {
 		return new HibernateTransaction(this.session.beginTransaction());
 	}
 	@Override

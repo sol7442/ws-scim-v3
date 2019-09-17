@@ -13,11 +13,7 @@ import org.junit.Test;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.wowsanta.scim.HibernateProxyTypeAdapter;
-import com.wowsanta.scim.model.ScimAttribute;
-import com.wowsanta.scim.model.ScimJob;
-import com.wowsanta.scim.model.ScimOrg;
-import com.wowsanta.scim.model.ScimPos;
-import com.wowsanta.scim.model.ScimUser;
+import com.wowsanta.scim.model.* ;
 
 public class HibernateControlTest {
 

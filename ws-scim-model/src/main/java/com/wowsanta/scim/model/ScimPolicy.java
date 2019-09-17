@@ -6,6 +6,7 @@ import java.util.Set;
 import javax.persistence.*;
 
 
+
 @Entity
 @Table(name = "SCIM_POLICY")
 public class ScimPolicy {

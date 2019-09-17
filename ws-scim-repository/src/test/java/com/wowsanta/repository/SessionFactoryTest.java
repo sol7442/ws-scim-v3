@@ -3,19 +3,13 @@ package com.wowsanta.repository;
 
 import java.util.Date;
 
-import org.hibernate.Transaction;
 import org.junit.Test;
 
-import com.wowsanta.scim.model.ScimAttribute;
-import com.wowsanta.scim.model.ScimJob;
-import com.wowsanta.scim.model.ScimOrg;
-import com.wowsanta.scim.model.ScimPos;
-import com.wowsanta.scim.model.ScimUser;
+import com.wowsanta.scim.model.*;
 import com.wowsanta.scim.repository.RepositoryConfiguration;
-import com.wowsanta.scim.repository.RepositoryConfiguration.REPOSITORY;
-import com.wowsanta.scim.repository.ScimSession;
-import com.wowsanta.scim.repository.ScimRepositoryFactory;
-import com.wowsanta.scim.repository.ScimTransaction;
+import com.wowsanta.scim.repository.RepositorySession;
+import com.wowsanta.scim.repository.RepositorySessionFactory;
+import com.wowsanta.scim.repository.RepositoryTransaction;
 
 
 
@@ -25,14 +19,11 @@ public class SessionFactoryTest {
 	public void load_hibernate_config_file() {
 
 		RepositoryConfiguration config = RepositoryConfiguration.load("../config/repository.json");
-		//config.setTyep(REPOSITORY.HIBERNATE);
-		//config.save("../config/repository.json");
-		
-		ScimRepositoryFactory repositoryFactory = config.build();
+		RepositorySessionFactory repositoryFactory = config.build();
 		
 		
-		ScimSession session = repositoryFactory.openSession();
-		ScimTransaction tr = session.beginTransaction();
+		RepositorySession session = repositoryFactory.openSession();
+		RepositoryTransaction tr = session.beginTransaction();
 		
 		ScimOrg org = new ScimOrg();
 		org.setId("org1");

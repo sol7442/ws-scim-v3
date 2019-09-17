@@ -1,9 +1,9 @@
 package com.wowsanta.scim.repository;
 
 
-public interface ScimSession {
+public interface RepositorySession {
 
-	public ScimTransaction beginTransaction();
+	public RepositoryTransaction beginTransaction();
 	public void close();
 	public void save(Object object);
 }
